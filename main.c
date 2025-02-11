@@ -3,7 +3,7 @@
 #include "hardware/pwm.h" //biblioteca para controlar o hardware de PWM
 
 #define PWM_PIN 22 
-const uint16_t WRAP_PERIOD = 20000; //valor máximo do contador - WRAP
+const uint16_t WRAP_PERIOD = 19999; //valor máximo do contador - WRAP
 const float PWM_DIVISER = 125.0; //divisor do clock para o PWM
 
 //função para configurar o módulo PWM
@@ -20,7 +20,6 @@ void pwm_setup()
     pwm_set_enabled(slice, true); //habilita o pwm no slice correspondente
 }
 
-//função principal
 int main()
 {
     stdio_init_all(); //inicializa o sistema padrão de I/O
